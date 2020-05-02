@@ -1,13 +1,10 @@
-/* default grey: #201742 */
-/* dark blue/purple: #201742 */
-
-
 html, body {
     padding: 0;
     margin: 0;
     height: 100%;
     font-family: sans-serif;
     font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 * {
@@ -28,11 +25,11 @@ div#sidebar {
     display: flex;
     flex-direction: column;
 
-    min-width: 280px;
+    min-width: 260px;
     padding: 0 20px 20px 20px;
     height: 100%;
     color: #fff;
-    background: #201742;
+    background: #3b4048;
     font-size: 14px;
     transition: margin-left 0.3s ease;
     overflow: hidden;
@@ -40,7 +37,7 @@ div#sidebar {
 }
 
 div#sidebar.hide {
-    margin-left: -280px;
+    margin-left: -260px;
 }
 
 div#sidebar div#logo {
@@ -65,7 +62,7 @@ div#sidebar a {
     justify-content: left;
     align-items: center;
     height: 50px;
-    padding: 0 20px 0 64px;
+    padding: 0 20px 0 20px;
     min-height: 50px;
     text-decoration: none;
     color: rgba(255,255,255,0.6);
@@ -78,31 +75,17 @@ div#sidebar a.selected {
     background: rgba(255,255,255,0.2);
 }
 
+div#sidebar a.selected div.material-icons {
+    color: #4ede0b;
+    /* #4cb61b; */
+}
+
 div#sidebar a:hover {
     color: #fff;
 }
 
-div#sidebar a:before {
-    content: '';
-    position: absolute;
-    top: 13px;
-    height: 24px;
-    width: 24px;
-    background: #fff;
-    left: 20px;
-    border-radius: 6px;
-    opacity: 0.6;
-    transition: opacity 0.2s ease, background-color 0.2s ease;
-}
-
-div#sidebar a.selected:before, div#sidebar a:hover:before {
-    opacity: 1;
-}
-
-div#sidebar a.selected:before {
-    opacity: 1;
-    /* background: #4cb61b; */
-    background: #6dd41f;
+div#sidebar a div.material-icons {
+    margin-right: 20px;
 }
 
 div#sidebar a:last-of-type { margin-bottom: 20px; }
@@ -113,29 +96,28 @@ div#sidebar div#user {
     justify-content: left;
     align-items: center;
     height: 50px;
-    padding: 0 20px 0 64px;
+    padding: 0 20px;
     text-decoration: none;
     color: #fff;
-    /* color: rgba(255,255,255,0.6); */
     border-radius: 3px;
-    /* transition: color 0.2s ease, background-color 0.2s ease; */
     cursor: pointer;
 
     margin-top: auto;
     min-height: 50px;
 }
 
-div#sidebar div#user:before {
-    content: '';
-    position: absolute;
-    top: 13px;
-    height: 24px;
-    width: 24px;
-    background: #fff;
-    left: 20px;
-    border-radius: 24px;
-    /* opacity: 0.6; */
-    /* transition: opacity 0.2s ease, background-color 0.2s ease; */
+div#sidebar div#user div.material-icons {
+    margin-right: 20px;
+}
+
+div#sidebar div#user div.exit.material-icons {
+    margin-right: 0;
+    margin-left: auto;
+    color: rgba(255,255,255,0.6);
+}
+
+div#sidebar div#user:hover div.exit.material-icons {
+    color: #fff;
 }
 
 div#main {
@@ -155,12 +137,7 @@ div#main div#navbar {
 }
 
 div#main div#navbar div.hamburger {
-    display: block;
-    width: 24px;
-    height: 24px;
-    float: left;
     cursor: pointer;
-    background: #201742;
     margin-right: 20px;
 }
 
@@ -174,38 +151,21 @@ div#main div#navbar div.nav-right {
 }
 
 div#main div#navbar div.nav-right div.function {
-    display: block;
-    width: 24px;
-    height: 24px;
-    float: left;
     cursor: pointer;
-    background: #201742;
     margin-left: 20px;
-    border-radius: 24px;
 }
 
 div#main div.filter {
-    margin-top: 1px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px 20px 0 20px;
+    padding: 0 20px;
     background: #fff;
     overflow: hidden;
-    /* opacity: 1;
-    height: auto;
-    transform: scaleY(1);
-    transform-origin: top;
-    transition: transform 0.2s ease, margin 0.2s ease, padding 0.2s ease, opacity 0.2s ease; */
 }
 
 div#main div.filter.hide {
     display: none;
-    /* opacity: 0;
-    height: 0;
-    margin: 0;
-    padding: 0 20px;
-    transform: scaleY(0); */
 }
 
 div#main div.filter div.input {
@@ -220,22 +180,25 @@ div#main div.filter div.input label {
     display: block;
     margin-bottom: 5px;
     height: 16px;
+    font-weight: 600;
 }
 
 div#main div.filter div.input input {
     width: 100%;
-    border: 1px solid #201742;
+    border: 1px solid #3b4048;
     border-radius: 3px;
     height: 30px;
     padding: 0 5px;
+    background: #fff;
 }
 
 div#main div.filter div.input select {
     width: 100%;
-    border: 1px solid #201742;
+    border: 1px solid #3b4048;
     border-radius: 3px;
     height: 30px;
     padding: 0 5px;
+    background: #fff;
 }
 
 div#main div.filter div.buttons {
@@ -277,10 +240,11 @@ div#main div.table table thead tr th {
 }
 
 div#main div.table table thead tr th span.icon {
-    font-weight: bold;
-    margin-left: 5px;
-    opacity: 0.6;
-    display: inline-block;
+    opacity: 0.4;
+    font-size: 18px;
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
 }
 div#main div.table table thead tr th span.icon.active {
     opacity: 1;
@@ -313,7 +277,7 @@ div#main div.table table tbody tr.disabled td {
 }
 
 @media (max-width: 900px) {
-    div#sidebar { margin-left: -280px; }
+    div#sidebar { margin-left: -260px; }
 
     div#sidebar.open {
         margin-left: 0;

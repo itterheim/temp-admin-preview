@@ -5,34 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <div id="sidebar">
-            <div id="logo">LOGO</div>
-            <a href="#/dashboard" id="link-dashboard" class="selected">Dashboard</a>
+            <div id="logo">WHATEVER</div>
+            <a href="#/dashboard" id="link-dashboard" class="selected"><div class="material-icons">&#xe871</div><span>Dashboard</span></a>
             <hr/>
-            <a href="#/stockCards" id="link-stockcards">Something here</a>
-            <a href="#/link-a1" id="link-link-a1">Link A1</a>
-            <a href="#/link-a2" id="link-link-a2">Link A2</a>
-            <a href="#/link-a3" id="link-link-a3">Link A3</a>
+            <a href="#/stockCards" id="link-stockcards"><div class="material-icons">&#xe896</div><span>Something here</span></a>
+            <a href="#/link-a1" id="link-link-a1"><div class="material-icons">&#xe8cc</div><span>Link A1</span></a>
+            <a href="#/link-a2" id="link-link-a2"><div class="material-icons">&#xe8a1</div><span>Link A2</span></a>
+            <a href="#/link-a3" id="link-link-a3"><div class="material-icons">&#xe887</div><span>Link A3</span></a>
             <hr/>
-            <a href="#/link-b1" id="link-link-b1">Link B1</a>
-            <a href="#/link-b2" id="link-link-b2">Link B2</a>
-            <a href="#/link-b3" id="link-link-b3">Link B3</a>
-            <div id="user">USER</div>
+            <a href="#/link-b1" id="link-link-b1"><div class="material-icons">&#xe887</div><span>Link B1</span></a>
+            <a href="#/link-b2" id="link-link-b2"><div class="material-icons">&#xe887</div><span>Link B2</span></a>
+            <a href="#/link-b3" id="link-link-b3"><div class="material-icons">&#xe887</div><span>Link B3</span></a>
+            <div id="user"><div class="material-icons">&#xe7fd</div>USER<div class="exit material-icons">&#xe879</div></div>
         </div>
         <div id="main">
             <div id="navbar">
-                <div class="hamburger" title="Toggle sidebar"></div>
+                <div class="hamburger material-icons" title="Toggle sidebar">&#xe5d2;</div>
                 <div class="nav-left">Dashboard</div>
                 <div class="nav-right">
-                    <div class="function" title="function"></div>
-                    <div class="function" title="function"></div>
+                    <div class="function material-icons" title="function">&#xe8b6</div>
                 </div>
             </div>
-            <div class="filter">
+            <div class="filter hide">
                 <div class="input">
                     <label for="in1">Column 1</label>
                     <input type="text" id="in1" placeholder="&ndash;"/>
@@ -59,10 +60,10 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Column 1<span class="icon active">&uparrow;</span></td>
-                            <th>Column 2<span class="icon">&updownarrow;</span></td>
+                            <th><span class="icon active material-icons">&#xe5d8</span>Column 1</td>
+                            <th><span class="icon material-icons">&#xe8d5</span>Column 2</td>
                             <th>Column 3</td>
-                            <th>Column 4<span class="icon">&updownarrow;</span></td>
+                            <th><span class="icon material-icons">&#xe8d5</span>Column 4</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -137,11 +138,14 @@
     </div>
 
     <script>
+        const sidebar = document.querySelector('div#sidebar');
+
         document.querySelectorAll('div#sidebar a').forEach(x => x.onclick = () => {
             document.querySelectorAll('div#sidebar a.selected').forEach(y => y.classList.remove('selected'));
             x.classList.toggle('selected');
 
-            document.querySelector('div#navbar div.nav-left').innerHTML = x.innerHTML;
+            document.querySelector('div#navbar div.nav-left').innerHTML = x.querySelector('span').innerText;
+            document.querySelector('div#sidebar').classList.remove('open')
         });
         document.querySelector('div#navbar div.hamburger').onclick = (x) => {
             const sidebar = document.querySelector('div#sidebar');
@@ -158,7 +162,7 @@
             x.onclick = () => {
                 document.querySelector('div#main div.filter').classList.toggle('hide');
             }
-        })
+        });
     </script>
 </body>
 </html>
