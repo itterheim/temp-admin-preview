@@ -260,12 +260,14 @@ div#main div.table table thead tr th {
     font-weight: 700;
     border-bottom: 2px solid #e8ecef;
     padding: 10px 5px;
+    white-space: nowrap;
 }
 
 div#main div.table table thead tr th span.icon {
     font-weight: bold;
     margin-left: 5px;
     opacity: 0.6;
+    display: inline-block;
 }
 div#main div.table table thead tr th span.icon.active {
     opacity: 1;
