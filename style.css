@@ -223,10 +223,11 @@ div#main div.table {
     background: #fff;
     margin: 20px;
     border-radius: 3px;
+    overflow: auto;
 }
 
 div#main div.table table {
-    table-layout: fixed;
+    /* table-layout: fixed; */
     border-collapse: collapse;
     width: 100%;
 }
@@ -240,11 +241,11 @@ div#main div.table table thead tr th {
 }
 
 div#main div.table table thead tr th span.icon {
+    vertical-align: middle;
     opacity: 0.4;
     font-size: 18px;
-    position: relative;
     top: 4px;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 div#main div.table table thead tr th span.icon.active {
     opacity: 1;
@@ -254,9 +255,9 @@ div#main div.table table thead tr th:first-of-type {
     padding-left: 20px;
 }
 
-div#main div.table table thead tr th:first-of-type {
+/* div#main div.table table thead tr th:last-of-type {
     padding-right: 20px;
-}
+} */
 
 div#main div.table table tbody tr td {
     border-bottom: 1px solid #e8ecef;
@@ -267,9 +268,9 @@ div#main div.table table tbody tr td:first-of-type {
     padding-left: 20px;
 }
 
-div#main div.table table tbody tr td:first-of-type {
+/* div#main div.table table tbody tr td:last-of-type {
     padding-right: 20px;
-}
+} */
 
 div#main div.table table tbody tr.disabled td {
     color: #929292;
