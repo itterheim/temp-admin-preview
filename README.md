@@ -1,1 +1,1 @@
-https://itterheim.github.io/temp-admin-preview/
+https://itterheim.github.io/temp-admin-preview/index.html
