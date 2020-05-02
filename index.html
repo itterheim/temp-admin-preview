@@ -34,15 +34,15 @@
             </div>
             <div class="filter">
                 <div class="input">
-                    <label for="in1">Input 1</label>
+                    <label for="in1">Column 1</label>
                     <input type="text" id="in1" placeholder="&ndash;"/>
                 </div>
                 <div class="input">
-                    <label for="in2">Input 2</label>
+                    <label for="in2">Column 2</label>
                     <input type="text" id="in1" placeholder="&ndash;"/>
                 </div>
                 <div class="input">
-                    <label for="in3">Input 3</label>
+                    <label for="in3">Column 4</label>
                     <select id="in3">
                         <option value="">&ndash;</option>
                         <option value="1">OPT 1</option>
@@ -59,10 +59,10 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Column<span class="icon active">&uparrow;</span></td>
-                            <th>Column<span class="icon">&updownarrow;</span></td>
-                            <th>Column</td>
-                            <th>Column<span class="icon">&updownarrow;</span></td>
+                            <th>Column 1<span class="icon active">&uparrow;</span></td>
+                            <th>Column 2<span class="icon">&updownarrow;</span></td>
+                            <th>Column 3</td>
+                            <th>Column 4<span class="icon">&updownarrow;</span></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,14 +90,8 @@
                             <td>Value</td>
                             <td>Value</td>
                         </tr>
-                        <tr>
-                            <td>Value</td>
-                            <td>Value</td>
-                            <td>Value</td>
-                            <td>Value</td>
-                        </tr>
-                        <tr>
-                            <td>Value</td>
+                        <tr class="disabled">
+                            <td>Disabled</td>
                             <td>Value</td>
                             <td>Value</td>
                             <td>Value</td>
@@ -114,8 +108,14 @@
                             <td>Value</td>
                             <td>Value</td>
                         </tr>
-                        <tr>
+                        <tr class="disabled">
+                            <td>Disabled</td>
                             <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr class="disabled">
+                            <td>Disabled</td>
                             <td>Value</td>
                             <td>Value</td>
                             <td>Value</td>
@@ -143,7 +143,17 @@
 
             document.querySelector('div#navbar div.nav-left').innerHTML = x.innerHTML;
         });
-        document.querySelector('div#navbar div.hamburger').onclick = (x) => document.querySelector('div#sidebar').classList.toggle('open');
+        document.querySelector('div#navbar div.hamburger').onclick = (x) => {
+            const sidebar = document.querySelector('div#sidebar');
+
+            if (window.innerWidth <= 900) {
+                sidebar.classList.remove('hide');
+                sidebar.classList.toggle('open');
+            } else {
+                sidebar.classList.remove('open');
+                sidebar.classList.toggle('hide');
+            }
+        };
         document.querySelectorAll('div#navbar div.function').forEach(x => {
             x.onclick = () => {
                 document.querySelector('div#main div.filter').classList.toggle('hide');

@@ -1,3 +1,7 @@
+/* default grey: #201742 */
+/* dark blue/purple: #201742 */
+
+
 html, body {
     padding: 0;
     margin: 0;
@@ -28,11 +32,15 @@ div#sidebar {
     padding: 0 20px 20px 20px;
     height: 100%;
     color: #fff;
-    background: #525863;
+    background: #201742;
     font-size: 14px;
     transition: margin-left 0.3s ease;
     overflow: hidden;
     overflow-y: auto;
+}
+
+div#sidebar.hide {
+    margin-left: -280px;
 }
 
 div#sidebar div#logo {
@@ -67,7 +75,7 @@ div#sidebar a {
 
 div#sidebar a.selected {
     color: #fff;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.2);
 }
 
 div#sidebar a:hover {
@@ -152,7 +160,7 @@ div#main div#navbar div.hamburger {
     height: 24px;
     float: left;
     cursor: pointer;
-    background: #525863;
+    background: #201742;
     margin-right: 20px;
 }
 
@@ -171,7 +179,7 @@ div#main div#navbar div.nav-right div.function {
     height: 24px;
     float: left;
     cursor: pointer;
-    background: #525863;
+    background: #201742;
     margin-left: 20px;
     border-radius: 24px;
 }
@@ -216,7 +224,7 @@ div#main div.filter div.input label {
 
 div#main div.filter div.input input {
     width: 100%;
-    border: 1px solid #525863;
+    border: 1px solid #201742;
     border-radius: 3px;
     height: 30px;
     padding: 0 5px;
@@ -224,7 +232,7 @@ div#main div.filter div.input input {
 
 div#main div.filter div.input select {
     width: 100%;
-    border: 1px solid #525863;
+    border: 1px solid #201742;
     border-radius: 3px;
     height: 30px;
     padding: 0 5px;
@@ -245,6 +253,7 @@ div#main div.filter div.buttons button {
     border-radius: 3px;
     height: 30px;
     padding: 0 5px;
+    cursor: pointer;
 }
 
 div#main div.table {
@@ -296,6 +305,11 @@ div#main div.table table tbody tr td:first-of-type {
 
 div#main div.table table tbody tr td:first-of-type {
     padding-right: 20px;
+}
+
+div#main div.table table tbody tr.disabled td {
+    color: #929292;
+    background-color: #f6f8f9;
 }
 
 @media (max-width: 900px) {
