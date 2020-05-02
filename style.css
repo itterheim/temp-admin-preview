@@ -39,7 +39,7 @@ div#sidebar div#logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    min-height: 60px;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 1.2px;
@@ -58,6 +58,7 @@ div#sidebar a {
     align-items: center;
     height: 50px;
     padding: 0 20px 0 64px;
+    min-height: 50px;
     text-decoration: none;
     color: rgba(255,255,255,0.6);
     border-radius: 3px;
@@ -96,6 +97,8 @@ div#sidebar a.selected:before {
     background: #6dd41f;
 }
 
+div#sidebar a:last-of-type { margin-bottom: 20px; }
+
 div#sidebar div#user {
     position: relative;
     display: flex;
@@ -111,6 +114,7 @@ div#sidebar div#user {
     cursor: pointer;
 
     margin-top: auto;
+    min-height: 50px;
 }
 
 div#sidebar div#user:before {
