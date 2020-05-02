@@ -144,6 +144,11 @@
             document.querySelector('div#navbar div.nav-left').innerHTML = x.innerHTML;
         });
         document.querySelector('div#navbar div.hamburger').onclick = (x) => document.querySelector('div#sidebar').classList.toggle('open');
+        document.querySelectorAll('div#navbar div.function').forEach(x => {
+            x.onclick = () => {
+                document.querySelector('div#main div.filter').classList.toggle('hide');
+            }
+        })
     </script>
 </body>
 </html>
