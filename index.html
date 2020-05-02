@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="sidebar">
+            <div id="logo">LOGO</div>
+            <a href="#/dashboard" id="link-dashboard" class="selected">Dashboard</a>
+            <hr/>
+            <a href="#/stockCards" id="link-stockcards">Something here</a>
+            <a href="#/link-a1" id="link-link-a1">Link A1</a>
+            <a href="#/link-a2" id="link-link-a2">Link A2</a>
+            <a href="#/link-a3" id="link-link-a3">Link A3</a>
+            <hr/>
+            <a href="#/link-b1" id="link-link-b1">Link B1</a>
+            <a href="#/link-b2" id="link-link-b2">Link B2</a>
+            <a href="#/link-b3" id="link-link-b3">Link B3</a>
+            <div id="user">USER</div>
+        </div>
+        <div id="main">
+            <div id="navbar">
+                <div class="hamburger" title="Toggle sidebar"></div>
+                <div class="nav-left">Dashboard</div>
+                <div class="nav-right">
+                    <div class="function" title="function"></div>
+                    <div class="function" title="function"></div>
+                </div>
+            </div>
+            <div class="filter">
+                <div class="input">
+                    <label for="in1">Input 1</label>
+                    <input type="text" id="in1" />
+                </div>
+                <div class="input">
+                    <label for="in2">Input 2</label>
+                    <input type="text" id="in1" />
+                </div>
+                <div class="input">
+                    <label for="in3">Input 3</label>
+                    <select id="in3">
+                        <option value="">&ndash;</option>
+                        <option value="1">OPT 1</option>
+                        <option value="2">OPT 2</option>
+                        <option value="3">OPT 3</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <button>Filter</button>
+                </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Column<span class="icon active">&uparrow;</span></td>
+                            <th>Column<span class="icon">&updownarrow;</span></td>
+                            <th>Column</td>
+                            <th>Column<span class="icon">&updownarrow;</span></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div id="container">
+                <div id="content" class="container"></div>
+                <div id="overlay"></div>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('div#sidebar a').forEach(x => x.onclick = () => {
+            document.querySelectorAll('div#sidebar a.selected').forEach(y => y.classList.remove('selected'));
+            x.classList.toggle('selected');
+
+            document.querySelector('div#navbar div.nav-left').innerHTML = x.innerHTML;
+        });
+        document.querySelector('div#navbar div.hamburger').onclick = (x) => document.querySelector('div#sidebar').classList.toggle('open');
+    </script>
+</body>
+</html>
